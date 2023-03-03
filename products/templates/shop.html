@@ -143,6 +143,28 @@
         padding: 0;
     }
 
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 200px;
+        background-color: white;
+        padding: 10px;
+    }
+
+    .card img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .container {
+        padding: 2px 16px;
+    }
+
+    .col {
+        margin: 15px 0;
+    }
+
+
 
 
 </style>
@@ -194,19 +216,19 @@
 
         </div>
         <div class="shop">
-            {% block content %}
             <div class="row">
                 {% for product in products %}
-                <div class="col">
-                    <div class="card">
-                        <img src="{{ product.image_url }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ product.name }}</h5>
-                            <p class="card-text">₱{{ product.price }}</p>
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ product.image_url }}">
+                            <div class="container">
+                                <a href="#">{{ product.name }}</a>
+                                <p>₱ {{ product.price }}</p>
+                                <a href="#">Add to Cart</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </main>
