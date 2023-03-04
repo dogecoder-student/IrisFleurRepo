@@ -66,7 +66,6 @@
         display: inline-block;
         margin-left: 70px;
         padding-top: 2rem;
-
         position: relative;
     }
 
@@ -108,6 +107,8 @@
         margin: 0 auto;
     }
 
+    /* Banner CSS */
+
     .links {
         border-bottom: 2px solid #E0B1CB;
         width: 100%;
@@ -141,30 +142,126 @@
         display: inline-block;
         margin: 0;
         padding: 0;
+        margin-left: 400px;
+    }
+
+    /* Products CSS */
+
+    .thumbnail img {
+        min-width:100%;
     }
 
     .card {
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        width: 200px;
+        width: 280px;
+        box-shadow: 0 4px 7px #dfdfdf;
+        margin: 20px auto;
+        background: #fafafa;
+        border-radius: 10px;
+        border: solid 2px #E0B1CB;
+    }
+
+    .thumbnail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        padding: 0px;
+        background: #f0f0f0;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .details {
+        padding-left: 30px;
+        padding-right: 20px;
+    }
+
+    .details p {
+        font-size: 14px;
+    }
+
+    .details h4 a {
+        font-weight: 500;
+        display: block;
+        text-transform: uppercase;
+        color: black;
+        text-decoration: none;
+    }
+
+    .details h4 a:hover {
+        color: #E0B1CB;
+    }
+
+    .price {
+        padding-left: 30px;
+        padding-bottom: 5px;
+        font-size: 16px;
+        color: black;
+        font-weight: 600;
+    }
+
+    .more-details {
+        padding-left: 30px;
+        padding-bottom: 20px;
+    }
+
+    .button {
+        border-radius: 5px;
+        border: none;
+        background-color: #5E548E;
+        color: white;
+        padding: 12px 25px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        font-family: 'Gloock', serif;
+    }
+
+    .button:hover {
         background-color: white;
-        padding: 10px;
+        color: #5E548E;
+        transition: all ease-in-out 150ms;
     }
 
-    .card img {
-        width: 200px;
-        height: 150px;
+    .shop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        width: 80%;
     }
 
-    .container {
-        padding: 2px 16px;
+    .categories {
+        width: 20%;
+        background-color: #5E548E;
+        margin: 20px 0;
+        margin-right: 20px;
+        margin-bottom: -20px;
     }
 
-    .col {
-        margin: 15px 0;
+    .categories ul {
+        list-style: none;
     }
 
+    .categories li a {
+        text-decoration: none;
+        color: white;
+    }
 
+    .categories li {
+        padding: 5px;
+    }
+
+    .categories h3 {
+        padding-left: 20px;
+        color: white;
+        padding-bottom: 15px;
+        border-bottom: solid 1px white;
+    }
+
+    .main {
+        display: flex;
+    }
 
 
 </style>
@@ -187,13 +284,13 @@
                         <a href="../" class="active">Home</a>
                     </li>
                     <li>
-                        <a href="shop/">Shop</a>
+                        <a href="#">Shop</a>
                     </li>
                     <li>
                         <a href="../aboutus/">About Us</a>
                     </li>
                     <li>
-                        <a href="#">Login</a>
+                        <a href="../login">Login</a>
                     </li>
                 </ul>
             </nav>
@@ -212,22 +309,38 @@
                 <li><p>irisfleurcreations@gmail.com</p></li>
             </ul>
         </div>
-        <div class="categories">
-
-        </div>
-        <div class="shop">
-            <div class="row">
+        <div class="main">
+            <div class="categories">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Mini Vase</a></li>
+                    <li><a href="#">Big Vase</a></li>
+                    <li><a href="#">Flower Box</a></li>
+                    <li><a href="#">Flower Box Mini</a></li>
+                    <li><a href="#">Petite Bouquets</a></li>
+                    <li><a href="#">Grand Bouquets</a></li>
+                    <li><a href="#">Deluxe Bouquets</a></li>
+                </ul>
+            </div>
+            <div class="shop">
                 {% for product in products %}
-                    <div class="col">
-                        <div class="card">
-                            <img src="{{ product.image_url }}">
-                            <div class="container">
-                                <a href="#">{{ product.name }}</a>
-                                <p>₱ {{ product.price }}</p>
-                                <a href="#">Add to Cart</a>
-                            </div>
-                        </div>
+                <div class="card">
+                    <div class="thumbnail">
+                        <img src="{{ product.image_url }}">
                     </div>
+                    <div class="details">
+                        <h4><a href="{{ product.name }}/">{{ product.name }}</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+                    </div>
+                    <div class="price">
+                        <p>₱ {{ product.price }}</p>
+                    </div>
+                    <div class="more-details">
+                        <a href="#">
+                            <a href=""><button class="button" type="button">More Details...</button></a>
+                        </a>
+                    </div>
+                </div>
                 {% endfor %}
             </div>
         </div>
