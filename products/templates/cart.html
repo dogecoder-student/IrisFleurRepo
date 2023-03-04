@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');\
+
+    * {
+        font-family: 'Gloock', serif;
+    }
+
+    body {
+        background-color: #FFFCF3;
+        color: black;
+        font-family: 'Gloock', serif;
+    }
+
+    /* Header CSS */
+
+    .header-container {
+        width: 88%;
+        margin: 0 auto;
+        border-bottom: 2px solid #E0B1CB;
+    }
+
+    .logo {
+        float: left;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .search {
+        float: left;
+        margin-left: 6rem;
+        margin-top: 2rem;
+    }
+
+    .search input {
+        font-size: 17px;
+        border: 2px solid #E0B1CB;
+        border-radius: 5px;
+    }
+
+    nav {
+        float: right;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 2rem;
+        position: relative;
+    }
+
+    nav a {
+        color: black;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: #5E548E;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 0%;
+        background-color: #5E548E;
+
+        position: absolute;
+        top: 0;
+        transition: all ease-in-out 300ms;
+    }
+
+    nav a:hover::before  {
+        width: 100%;
+    }
+
+    header::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .links {
+        border-bottom: 2px solid #E0B1CB;
+        width: 100%;
+    }
+
+    .links li img {
+        width: 40px;
+        padding-top: -20px;
+    }
+
+    .links li {
+        float: left;
+    }
+
+    .links li p {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .links li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 18px 3px;
+    }
+
+    .links ul {
+        list-style: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        margin-left: 400px;
+    }
+
+    .content {
+        width: 88%;
+        margin: 0 auto;
+    }
+
+    .cart-container {
+        width: 80%;
+        margin: 0 auto;
+        height: 465px;
+        background-color: white;
+        margin-top: 25px;
+        border-radius: 10px;
+        border: solid 2px #E0B1CB;
+    }
+
+    .cart-container h3 {
+        text-align: center;
+    }
+
+    .top-list {
+        display: flex;
+
+        justify-content: space-around;
+        flex-flow: row wrap;
+        align-items: stretch;
+        text-align: center;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .box1 {
+        flex-grow: 2;
+    }
+
+    .box2 {
+        flex-grow: 1;
+    }
+
+    .product-container {
+        width: 95%;
+        height: 150px;
+        background-color: white;
+        margin: 15px auto;
+        border-radius: 10px;
+        border: solid 1px #D6BDDA;
+
+        display: flex;
+
+        justify-content: space-around;
+        flex-flow: row wrap;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .box1 img {
+        width: 100px;
+    }
+
+</style>
+
+<body>
+
+<div class="header-container">
+    <header id="navbar">
+        <div class="logo">
+            <a href="../"><img
+                    src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t39.30808-6/321242888_711642687197679_1051418444368430074_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=eiq8Ny1ZiecAX9hIY4o&_nc_ht=scontent.fmnl4-3.fna&oh=00_AfB1S2E1AMcoJ_HMvNrUiHjBHErSuQvte5-sc5P3Y323jg&oe=63FBDEC3"></a>
+        </div>
+        <div class="search">
+            <input type="text" class="searchbar" placeholder="Search..">
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="shop/">Shop</a>
+                    </li>
+                    <li>
+                        <a href="aboutus/">About Us</a>
+                    </li>
+                    <li>
+                        <a href="login">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</div>
+
+<div class="main-container">
+    <div class="content">
+        <div class="links">
+            <ul>
+                <li><p class="left">Iris Fleur Creations Shop</p></li>
+                <li><a href=""><img src="https://i.imgur.com/w3kp19j.png"></a></li>
+                <li><a href=""><img src="https://i.imgur.com/cwj1D2c.png"></a></li>
+                <li><a href=""><img src="https://i.imgur.com/atfSa5A.png"></a></li>
+                <li><p>irisfleurcreations@gmail.com</p></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cart-container">
+
+        <h3>Cart</h3>
+
+        <div class="card-container">
+            <div class="top-list">
+                <div class="box1"></div>
+                <div class="box1">Product Name</div>
+                <div class="box2">Unit Price</div>
+                <div class="box2">Quantity</div>
+                <div class="box2">Amount Price</div>
+                <div class="box2"></div>
+            </div>
+            <div class="product-container">
+                <div class="box1"><img src="https://i.etsystatic.com/8383766/r/il/0cfefe/544909835/il_570xN.544909835_d97i.jpg"></div>
+                <div class="box1">Flower</div>
+                <div class="box2">150</div>
+                <div class="box2">5</div>
+                <div class="box2">750</div>
+                <div class="box2"><button type="button">Remove</button></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
