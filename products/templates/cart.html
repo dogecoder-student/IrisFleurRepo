@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cart</title>
 </head>
 
 <style>
@@ -144,6 +144,7 @@
         margin-top: 25px;
         border-radius: 10px;
         border: solid 2px #E0B1CB;
+        position: relative;
     }
 
     .cart-container h3 {
@@ -151,22 +152,19 @@
     }
 
     .top-list {
-        display: flex;
-
-        justify-content: space-around;
-        flex-flow: row wrap;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: 15% 20% 15% 15% 15% 15%;
         text-align: center;
         width: 95%;
         margin: 0 auto;
     }
 
     .box1 {
-        flex-grow: 2;
+        margin: auto auto;
     }
 
     .box2 {
-        flex-grow: 1;
+        margin: auto auto;
     }
 
     .product-container {
@@ -177,16 +175,32 @@
         border-radius: 10px;
         border: solid 1px #D6BDDA;
 
-        display: flex;
-
-        justify-content: space-around;
-        flex-flow: row wrap;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: 15% 20% 15% 15% 15% 15%;
         text-align: center;
     }
 
     .box1 img {
         width: 100px;
+    }
+
+    .totals-container {
+        width: 95%;
+        height: 75px;
+        background-color: pink;
+        border-radius: 10px;
+
+        margin: 20px 25px;
+        position: absolute;
+        bottom: 0;
+
+        display: grid;
+        grid-template-columns: 51% 15% 15% 15%;
+        text-align: center;
+    }
+
+    .empty {
+        margin: auto auto;
     }
 
 </style>
@@ -256,6 +270,12 @@
                 <div class="box2">5</div>
                 <div class="box2">750</div>
                 <div class="box2"><button type="button">Remove</button></div>
+            </div>
+            <div class="totals-container">
+                <div class="empty"></div>
+                <div class="empty">Total:</div>
+                <div class="empty">PHP</div>
+                <div class="empty"><button type="">Check out</button></div>
             </div>
         </div>
 
