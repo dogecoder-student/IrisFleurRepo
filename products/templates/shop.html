@@ -323,17 +323,17 @@
                 </ul>
             </div>
             <div class="shop">
-                {% for product in products %}
+                {% for products in products %}
                 <div class="card">
                     <div class="thumbnail">
-                        <img src="{{ product.image_url }}">
+                        <img src="{{ products.image_url }}">
                     </div>
                     <div class="details">
-                        <h4><a href="{{ product.name }}/">{{ product.name }}</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+                        <h4><a href="{{ products.name }}/">{{ products.name }}</a></h4>
+                        <p>{{ products.category }}</p>
                     </div>
                     <div class="price">
-                        <p>₱ {{ product.price }}</p>
+                        <p>₱ {{ products.price }}</p>
                     </div>
                     <div class="more-details">
                         <a href="#">

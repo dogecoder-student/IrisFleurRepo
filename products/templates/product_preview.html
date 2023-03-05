@@ -6,7 +6,452 @@
 </head>
 <body>
 
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Landing Page</title>
+</head>
 
+<style>
+
+    /* General CSS */
+
+    @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');\
+
+    * {
+        font-family: 'Gloock', serif;
+    }
+
+    body {
+        background-color: #FFFCF3;
+        color: black;
+        font-family: 'Gloock', serif;
+    }
+
+    /* Header CSS */
+
+    .header-container {
+        width: 90%;
+        margin: 0 auto;
+        border-bottom: 2px solid #E0B1CB;
+    }
+
+    .logo {
+        float: left;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .search {
+        float: left;
+        margin-left: 6rem;
+        margin-top: 2rem;
+    }
+
+    .search input {
+        font-size: 17px;
+        border: 2px solid #E0B1CB;
+        border-radius: 5px;
+    }
+
+    nav {
+        float: right;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 2rem;
+        position: relative;
+    }
+
+    nav a {
+        color: black;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: #5E548E;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 0%;
+        background-color: #5E548E;
+
+        position: absolute;
+        top: 0;
+        transition: all ease-in-out 300ms;
+    }
+
+    nav a:hover::before  {
+        width: 100%;
+    }
+
+    header::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    /* Main CSS */
+
+    .main-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Banner CSS */
+
+    .links {
+        border-bottom: 2px solid #E0B1CB;
+        width: 100%;
+    }
+
+    .links li img {
+        width: 40px;
+        padding-top: -20px;
+    }
+
+    .links li {
+        float: left;
+    }
+
+    .links li p {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .links li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 18px 3px;
+    }
+
+    .links ul {
+        list-style: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        margin-left: 400px;
+    }
+
+    /* Products CSS */
+
+    .thumbnail img {
+        min-width:100%;
+    }
+
+    .card {
+        width: 280px;
+        box-shadow: 0 4px 7px #dfdfdf;
+        margin: 20px auto;
+        background: #fafafa;
+        border-radius: 10px;
+        border: solid 2px #E0B1CB;
+    }
+
+    .thumbnail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        padding: 0px;
+        background: #f0f0f0;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .details {
+        padding-left: 30px;
+        padding-right: 20px;
+    }
+
+    .details p {
+        font-size: 14px;
+    }
+
+    .details h4 a {
+        font-weight: 500;
+        display: block;
+        text-transform: uppercase;
+        color: black;
+        text-decoration: none;
+    }
+
+    .details h4 a:hover {
+        color: #E0B1CB;
+    }
+
+    .price {
+        padding-left: 30px;
+        padding-bottom: 5px;
+        font-size: 16px;
+        color: black;
+        font-weight: 600;
+    }
+
+    .more-details {
+        padding-left: 30px;
+        padding-bottom: 20px;
+    }
+
+    .button {
+        border-radius: 5px;
+        border: none;
+        background-color: #5E548E;
+        color: white;
+        padding: 12px 25px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        font-family: 'Gloock', serif;
+    }
+
+    .button:hover {
+        background-color: white;
+        color: #5E548E;
+        transition: all ease-in-out 150ms;
+    }
+
+    .shop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        width: 80%;
+    }
+
+    .categories {
+        width: 20%;
+        background-color: #5E548E;
+        margin: 20px 0;
+    }
+
+    .categories ul {
+        list-style: none;
+    }
+
+    .categories li a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .categories li {
+        padding: 5px;
+    }
+
+    .categories h3 {
+        padding-left: 20px;
+        color: white;
+        padding-bottom: 15px;
+        border-bottom: solid 1px white;
+    }
+
+    .main {
+        display: flex;
+        border-bottom: solid 2px pink;
+    }
+
+    .product-container {
+        width: 60%;
+        height: 475px;
+        background-color: white;
+        margin: 20px 20px;
+        border-radius: 10px;
+        border: solid 2px #E0B1CB
+    }
+
+    .recommendation-container {
+        width: 20%;
+        height: 475 px;
+        background-color: white;
+        margin: 20px auto;
+        border-radius: 10px;
+        border: solid 2px #E0B1CB;
+    }
+
+    .image-container {
+        margin: auto 50px;
+    }
+
+    .details-container {
+        margin: 20px 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+    }
+
+    .name {
+        width: 95%;
+        height: 50px;
+        display: grid;
+        grid-template-columns: 40% 40%;
+        margin: 0 auto;
+        padding-left: 150px;
+    }
+
+    .stuff-container {
+        width: 95%;
+        height: 400px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin: 5px auto;
+    }
+
+    .recommendations {
+        width: 90%;
+        height: 130px;
+        background-color: white;
+        margin: 10px auto;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recommendation-container h3 {
+        margin: 9px auto;
+        text-align: center;
+    }
+
+    .recommendations img {
+        width: 100px;
+    }
+
+    .left-r {
+        margin: auto auto;
+    }
+
+    .right-r {
+        margin: auto auto;
+    }
+
+</style>
+
+<body>
+
+<div class="header-container">
+    <header id="navbar">
+        <div class="logo">
+            <a href="../"><img
+                    src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t39.30808-6/321242888_711642687197679_1051418444368430074_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=eiq8Ny1ZiecAX9hIY4o&_nc_ht=scontent.fmnl4-3.fna&oh=00_AfB1S2E1AMcoJ_HMvNrUiHjBHErSuQvte5-sc5P3Y323jg&oe=63FBDEC3"></a>
+        </div>
+        <div class="search">
+            <input type="text" class="searchbar" placeholder="Search..">
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Shop</a>
+                    </li>
+                    <li>
+                        <a href="../aboutus/">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../login">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</div>
+
+<div class="main-container">
+    <main class="content">
+        <div class="links">
+            <ul>
+                <li><p class="left">Iris Fleur Creations Shop</p></li>
+                <li><a href=""><img src="https://i.imgur.com/w3kp19j.png"></a></li>
+                <li><a href=""><img src="https://i.imgur.com/cwj1D2c.png"></a></li>
+                <li><a href=""><img src="https://i.imgur.com/atfSa5A.png"></a></li>
+                <li><p>irisfleurcreations@gmail.com</p></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="categories">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Mini Vase</a></li>
+                    <li><a href="#">Big Vase</a></li>
+                    <li><a href="#">Flower Box</a></li>
+                    <li><a href="#">Flower Box Mini</a></li>
+                    <li><a href="#">Petite Bouquets</a></li>
+                    <li><a href="#">Grand Bouquets</a></li>
+                    <li><a href="#">Deluxe Bouquets</a></li>
+                </ul>
+            </div>
+            <div class="product-container">
+
+                <div class="name">
+                    <div class="name-item"><h3>Product Name</h3></div>
+                    <div class="name-item"></div>
+                </div>
+
+                <div class="stuff-container">
+                    <div class="image-container">
+                        <img src="https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/329031799_5723905304402060_1274845889443915847_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=5m-jljmiZEYAX__sPbS&_nc_ht=scontent.fmnl25-5.fna&oh=00_AfDK9xHDRfQj5mo0Fy6_wFwM8GjD3u3f8nIZkchDo00f_w&oe=64086028">
+                    </div>
+                    <div class="details-container">
+                        <p>Product Details</p>
+                        <p>Price</p>
+                        <p>Stock</p>
+                        <p>Shipping Details</p>
+                        <p>Dedications/Special Instructions</p>
+                        <input type="text">
+                        <br>
+                        <br>
+                        <button type="button">Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="recommendation-container">
+
+                <h3>Related Products</h3>
+
+                <div class="recommendations">
+                    <div class="left-r"><img src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t39.30808-6/321242888_711642687197679_1051418444368430074_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=eiq8Ny1ZiecAX9hIY4o&_nc_ht=scontent.fmnl4-3.fna&oh=00_AfB1S2E1AMcoJ_HMvNrUiHjBHErSuQvte5-sc5P3Y323jg&oe=63FBDEC3"></div>
+                    <div class="right-r"><p>Lorem</p> <button type="button">More Details</button> </div>
+                </div>
+                <div class="recommendations">
+                    <div class="left-r"><img src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t39.30808-6/321242888_711642687197679_1051418444368430074_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=eiq8Ny1ZiecAX9hIY4o&_nc_ht=scontent.fmnl4-3.fna&oh=00_AfB1S2E1AMcoJ_HMvNrUiHjBHErSuQvte5-sc5P3Y323jg&oe=63FBDEC3"></div>
+                    <div class="right-r"><p>Lorem</p> <button type="button">More Details</button> </div>
+                </div>
+                <div class="recommendations">
+                    <div class="left-r"><img src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t39.30808-6/321242888_711642687197679_1051418444368430074_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=eiq8Ny1ZiecAX9hIY4o&_nc_ht=scontent.fmnl4-3.fna&oh=00_AfB1S2E1AMcoJ_HMvNrUiHjBHErSuQvte5-sc5P3Y323jg&oe=63FBDEC3"></div>
+                    <div class="right-r"><p>Lorem</p> <button type="button">More Details</button> </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+
+</html>
 
 </body>
 </html>
