@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+</head>
+
+<style>
+
+    /* General CSS */
+
+    @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');\
+
+    * {
+        font-family: 'Gloock', serif;
+    }
+
+    body {
+        background-color: #FFFCF3;
+        color: black;
+        font-family: 'Gloock', serif;
+    }
+
+    /* Header CSS */
+
+    .header-container {
+        width: 88%;
+        margin: 0 auto;
+        border-bottom: 2px solid #E0B1CB;
+    }
+
+    .logo {
+        float: left;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .search {
+        float: left;
+        margin-left: 6rem;
+        margin-top: 2rem;
+    }
+
+    .search input {
+        font-size: 17px;
+        border: 2px solid #E0B1CB;
+        border-radius: 5px;
+    }
+
+    nav {
+        float: right;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 2rem;
+        position: relative;
+    }
+
+    nav a {
+        color: black;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: #5E548E;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 0%;
+        background-color: #5E548E;
+
+        position: absolute;
+        top: 0;
+        transition: all ease-in-out 300ms;
+    }
+
+    nav a:hover::before  {
+        width: 100%;
+    }
+
+    header::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .signup-button:hover {
+        background-color: white;
+        color: #5E548E;
+        cursor: pointer;
+}
+
+
+
+
+    /* Header CSS */
+
+
+
+    .login-container {
+        width: 20%;
+        height: 630px;
+        margin: 30px auto;
+        background-color: #F3D691;
+        border-radius: 15px;
+        border: solid 2px #BE95C4;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+    .login-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-container {
+        width: 75%;
+    }
+
+
+    form input {
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+    }
+
+
+    form .signup-button {
+        border-radius: 10px;
+        border: solid 1px white;
+        background-color: #5E548E;
+        color: white;
+        padding: 13px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        font-family: 'Gloock', serif;
+        width: 100%;
+        margin: 30px auto;
+    }
+
+
+
+
+</style>
+
+<body>
+
+<div class="header-container">
+    <header id="navbar">
+        <div class="logo">
+            <a href="../"><img
+                    src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t39.30808-6/321242888_711642687197679_1051418444368430074_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=eiq8Ny1ZiecAX9hIY4o&_nc_ht=scontent.fmnl4-3.fna&oh=00_AfB1S2E1AMcoJ_HMvNrUiHjBHErSuQvte5-sc5P3Y323jg&oe=63FBDEC3"></a>
+        </div>
+        <div class="search">
+            <input type="text" class="searchbar" placeholder="Search..">
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="../shop/">Shop</a>
+                    </li>
+                    <li>
+                        <a href="../aboutus/">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../login/">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</div>
+
+<div class="login-container">
+
+    <div class="header">
+        <h2>Sign Up</h2>
+    </div>
+
+
+    <div class="login-content">
+        <div class="left-container">
+            <div class="form">
+                <form action="">
+                    <p>First Name</p>
+                    <input type="text" id="firstname" placeholder="First Name">
+                    <p>Last Name</p>
+                    <input type="text" id="lastname" placeholder="Last Name">
+                    <p>Email</p>
+                    <input type="text" id="email" placeholder="Email">
+                    <p>Password</p>
+                    <input type="text" id="password" placeholder="Password">
+                    <p>Confirm Password</p>
+                    <input type="text" id="confirmpassword" placeholder="Confirm Password">
+
+                    <button class="signup-button" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
