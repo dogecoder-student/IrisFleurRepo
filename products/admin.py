@@ -20,7 +20,7 @@ class ProductsAdmin(admin.ModelAdmin):
 
 
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ()
+    list_display = ('first_name', 'last_name', 'email_address', 'password_id', )
 
 
 class OrderContentsAdmin(admin.ModelAdmin):
