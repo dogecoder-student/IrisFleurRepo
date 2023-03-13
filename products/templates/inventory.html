@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+
+      /* General CSS */
+
+    @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');\
+
+    * {
+        font-family: 'Gloock', serif;
+    }
+
+    body {
+        background-color: #FFFCF3;
+        color: black;
+        font-family: 'Gloock', serif;
+    }
+
+    /* Header CSS */
+
+    .header-container {
+        width: 88%;
+        margin: 0 auto;
+        border-bottom: 2px solid #E0B1CB;
+    }
+
+    .logo {
+        float: left;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .search {
+        float: left;
+        margin-left: 6rem;
+        margin-top: 2rem;
+    }
+
+    .search input {
+        font-size: 17px;
+        border: 2px solid #E0B1CB;
+        border-radius: 5px;
+    }
+
+    nav {
+        float: right;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 2rem;
+        position: relative;
+    }
+
+    nav a {
+        color: black;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: #5E548E;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 0%;
+        background-color: #5E548E;
+
+        position: absolute;
+        top: 0;
+        transition: all ease-in-out 300ms;
+    }
+
+    nav a:hover::before  {
+        width: 100%;
+    }
+
+    header::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    /* Main CSS */
+
+    .main-container {
+        width: 85%;
+        height: 100%;
+        margin: 20px auto;
+    }
+
+    .sales-report-container {
+        width: 95%;
+        height: 280px;
+        margin: 0 auto;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .inventory-container {
+        width: 95%;
+        height: 500px;
+        margin: 10px auto;
+    }
+
+    .highest-container {
+        width: 95%;
+        height: 85%;
+        margin: auto auto;
+        border-radius: 10px;
+        border: solid #E0B1CB 2px;
+    }
+
+    .lowest-container {
+        width: 95%;
+        height: 85%;
+        margin: auto auto;
+        border-radius: 10px;
+        border: solid #E0B1CB 2px;
+    }
+
+    .report-header {
+        width: 100%;
+        height: 25%;
+        background-color: #5E548E;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .report-body {
+        width: 100%;
+        height: 75%;
+        background-color: white;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .sales-report-container p {
+        margin: 0;
+        padding: 20px;
+        color: white;
+    }
+
+    .labels {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px 0;
+        border-bottom: solid #E0B1CB 1px;
+    }
+
+    .fields {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+
+    .product-report-container {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: white;
+        border: solid #E0B1CB 2px;
+        width: 90%;
+        margin: 0 auto;
+        height: auto;
+    }
+
+    .collapsible {
+        background-color: #5E548E;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .content-label {
+        display: grid;
+        grid-template-columns: 20% 20% 15% 15% 15% 15%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px 0;
+        border-bottom: solid #E0B1CB 1px;
+    }
+
+    .product-data {
+        display: grid;
+        grid-template-columns: 20% 20% 15% 15% 15% 15%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px 0;
+        border-bottom: solid #E0B1CB 1px;
+    }
+
+    .product-data img {
+        width: 100px;
+    }
+
+    .grid-label {
+        margin: auto auto;
+    }
+
+
+
+
+</style>
+
+<body>
+
+<div class="header-container">
+    <header id="navbar">
+        <div class="logo">
+            <a href="../"><img src="https://i.imgur.com/Vi3rMqG.png"></a>
+        </div>
+        <div class="search">
+            <input type="text" class="searchbar" placeholder="Search..">
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="../shop/">Shop</a>
+                    </li>
+                    <li>
+                        <a href="../aboutus/">About Us</a>
+                    </li>
+                    <li>
+                        <a href="login">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</div>
+
+<div class="main-container">
+    <div class="sales-report-container">
+        <div class="highest-container">
+            <div class="report-header"><p>Highest Sales Report</p></div>
+            <div class="report-body">
+                <div class="labels">
+                    <div class="grid-label">Arrangement</div>
+                    <div class="grid-label">Name</div>
+                    <div class="grid-label">Units Sold</div>
+                    <div class="grid-label">Total</div>
+                </div>
+                <div class="fields">
+                    <div class="grid-label">Petite Bouquet</div>
+                    <div class="grid-label">Mozambique</div>
+                    <div class="grid-label">30</div>
+                    <div class="grid-label">4500</div>
+                </div>
+            </div>
+        </div>
+        <div class="lowest-container">
+            <div class="report-header"><p>Lowest Sales Report</p></div>
+            <div class="report-body">
+                <div class="labels">
+                    <div class="grid-label">Arrangement</div>
+                    <div class="grid-label">Name</div>
+                    <div class="grid-label">Units Sold</div>
+                    <div class="grid-label">Total</div>
+                </div>
+                <div class="fields">
+                    <div class="grid-label">Petite Bouquet</div>
+                    <div class="grid-label">Mozambique</div>
+                    <div class="grid-label">30</div>
+                    <div class="grid-label">4500</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inventory-container">
+        <div class="product-report-container">
+            <button type="button" class="collapsible">Petite Bouquet</button>
+            <div class="content">
+                <div class="content-label">
+                    <div class="grid-label">Names</div>
+                    <div class="grid-label">Image</div>
+                    <div class="grid-label">Stock</div>
+                    <div class="grid-label">Add</div>
+                    <div class="grid-label">Minus</div>
+                    <div class="grid-label">Price</div>
+                </div>
+                <div class="product-data">
+                    <div class="grid-label">Aurora</div>
+                    <div class="grid-label"><img src="https://ms3.embroideryshristi.com/6293/simple-2x2-embroidery-flower-design.jpg"></div>
+                    <div class="grid-label">30</div>
+                    <div class="grid-label">Add</div>
+                    <div class="grid-label">Minus</div>
+                    <div class="grid-label">1500</div>
+                </div>
+            </div>
+            <button type="button" class="collapsible">Grand Bouquet</button>
+            <div class="content">
+                <div class="content-label">
+                    <div class="grid-label">Names</div>
+                    <div class="grid-label">Image</div>
+                    <div class="grid-label">Stock</div>
+                    <div class="grid-label">Add</div>
+                    <div class="grid-label">Minus</div>
+                    <div class="grid-label">Price</div>
+                </div>
+                <div class="product-data">
+                    <div class="grid-label">Aurora</div>
+                    <div class="grid-label"><img src="https://ms3.embroideryshristi.com/6293/simple-2x2-embroidery-flower-design.jpg"></div>
+                    <div class="grid-label">30</div>
+                    <div class="grid-label">Add</div>
+                    <div class="grid-label">Minus</div>
+                    <div class="grid-label">1500</div>
+                </div>
+            </div>
+            <button type="button" class="collapsible">Deluxe Bouquet</button>
+            <div class="content">
+                <div class="content-label">
+                    <div class="grid-label">Names</div>
+                    <div class="grid-label">Image</div>
+                    <div class="grid-label">Stock</div>
+                    <div class="grid-label">Add</div>
+                    <div class="grid-label">Minus</div>
+                    <div class="grid-label">Price</div>
+                </div>
+                <div class="product-data">
+                    <div class="grid-label">Aurora</div>
+                    <div class="grid-label"><img src="https://ms3.embroideryshristi.com/6293/simple-2x2-embroidery-flower-design.jpg"></div>
+                    <div class="grid-label">30</div>
+                    <div class="grid-label">Add</div>
+                    <div class="grid-label">Minus</div>
+                    <div class="grid-label">1500</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

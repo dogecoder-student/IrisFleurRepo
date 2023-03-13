@@ -101,7 +101,7 @@
 
     .login-container {
         width: 40%;
-        height: 530px;
+        height: 100%;
         margin: 30px auto;
         background-color: #F3D691;
         border-radius: 15px;
@@ -170,6 +170,15 @@
         padding: 10px 0;
     }
 
+    .message {
+        color: green;
+    }
+
+    .message-container {
+        padding: 5px;
+    }
+
+
 
 </style>
 
@@ -196,7 +205,7 @@
                         <a href="../aboutus/">About Us</a>
                     </li>
                     <li>
-                        <a href="#">Login</a>
+                        <a href="login">Login</a>
                     </li>
                 </ul>
             </nav>
@@ -213,16 +222,22 @@
     <div class="login-content">
         <div class="left-container">
             <div class="form">
-                <form action="">
-                    <p>Email</p>
-                    <input type="text" id="email" placeholder="Email">
+                <form method="POST" action="">
+                    {% for message in messages %}
+                    <div class="message-container">
+                        <p class="message">{{ message }}</p>
+                    </div>
+                    {% endfor %}
+                    {% csrf_token %}
+                    <p>Username</p>
+                    <input type="text" placeholder="Email" name="username">
                     <p>Password</p>
-                    <input type="text" id="password" placeholder="Password">
+                    <input type="password" placeholder="Password" name="password">
                     <div class="forgot">
-                    <a href="../forgotpassword">Forgot Password</a>
-                        </div>
-                    <button class="login-button" type="submit">Login</button>
-                    <p>No Account?  <a href="../signup">Register Here</a></p>
+                        <a href="../forgotpassword">Forgot Password</a>
+                    </div>
+                    <input class="login-button" type="submit" name="login">
+                    <p>No Account? <a href="../signup">Register Here</a></p>
                     <button class="social-button" type="button">Login with Facebook</button>
                     <button class="social-button" type="button">Login with Google</button>
                 </form>

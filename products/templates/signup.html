@@ -97,22 +97,13 @@
         clear: both;
     }
 
-    .signup-button:hover {
-        background-color: white;
-        color: #5E548E;
-        cursor: pointer;
-}
-
-
-
-
     /* Header CSS */
 
 
 
     .login-container {
-        width: 20%;
-        height: 630px;
+        width: 30%;
+        height: 100%;
         margin: 30px auto;
         background-color: #F3D691;
         border-radius: 15px;
@@ -136,27 +127,33 @@
 
 
     form input {
-        width: 100%;
+        width: 90%;
         height: 30px;
         border-radius: 5px;
+        padding: 5px 10px;
+        margin: 0 auto;
     }
 
 
-    form .signup-button {
+    form .signup-button input {
         border-radius: 10px;
         border: solid 1px white;
         background-color: #5E548E;
         color: white;
-        padding: 13px 32px;
         text-align: center;
-        display: inline-block;
         font-size: 16px;
         font-family: 'Gloock', serif;
         width: 100%;
-        margin: 30px auto;
+        margin: 10px auto;
     }
 
+    .signup-button input:hover {
+        cursor: pointer;
+}
 
+    .login {
+        margin: 10px;
+    }
 
 
 </style>
@@ -204,9 +201,24 @@
             <div class="form">
                 <form method="POST" action="">
                     {% csrf_token %}
-                    {{ form.username }}
+                    <p>{{ form.username.label }}</p>
+                    <div class="input">{{ form.username }}</div>
+                    <p>{{ form.first_name.label }}</p>
+                    <div class="input">{{ form.first_name }}</div>
+                    <p>{{ form.last_name.label }}</p>
+                    <div class="input">{{ form.last_name }}</div>
+                    <p>{{ form.email.label }}</p>
+                    <div class="input">{{ form.email }}</div>
+                    <p>{{ form.password1.label }}</p>
+                    <div class="input">{{ form.password1 }}</div>
+                    <p>{{ form.password2.label }}</p>
+                    <div class="input">{{ form.password2 }}</div>
 
-                    <input type="submit" name="Create User">
+                    <div class="login"><p>Already have an account?  <a href="../login/">Log In</a></p></div>
+
+                    {{ form.errors }}
+
+                    <div class="signup-button"><input type="submit" name="Create User" class="text"></div>
                 </form>
             </div>
         </div>

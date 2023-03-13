@@ -156,6 +156,11 @@
         transition: all ease-in-out 250ms;
     }
 
+    .message {
+        color: green;
+        text-align: center;
+    }
+
 </style>
 
 <body>
@@ -188,6 +193,10 @@
         </div>
     </header>
 </div>
+
+{% for message in messages %}
+<div class="message"><p>{{ message }}</p></div>
+{% endfor %}
 
 <div class="main-container">
     <main class="content">
